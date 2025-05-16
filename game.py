@@ -172,7 +172,7 @@ class Game:
             color = car.color
             pygame.draw.rect(self.screen, color, rect)
 
-            # Surligner la voiture sélectionnée
+            # Surligner la voiture sélectionnée #
             if index == self.selected_car_index:
                 pygame.draw.rect(self.screen, (255, 255, 255), rect, 3)
 

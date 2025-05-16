@@ -4,10 +4,10 @@ from car import Car
 
 class GameState:
     def __init__(self, cars, width, height, history=None):
-        self.cars = cars  # Liste d'objets Car (copiés)
+        self.cars = cars  # Liste d'objets Car (copiés) #
         self.width = width
         self.height = height
-        self.history = history or []  # Liste de (car_id, move)
+        self.history = history or []  # Liste de (car_id, move) #
 
     def is_victory(self):
         red_car = next(car for car in self.cars if car.id == "RED")
@@ -18,7 +18,7 @@ class GameState:
 
         for i, car in enumerate(self.cars):
             for direction in ["forward", "backward"]:
-                # Simule le déplacement sans modifier l'original
+                # test le déplacement sans modifier l'original #
                 future_car = Car(car.id, car.x, car.y, car.length, car.orientation, car.color)
                 future_car.move(direction)
 
@@ -26,11 +26,10 @@ class GameState:
                 if not self._is_valid_move(future_positions, car.id):
                     continue
 
-                # Crée une nouvelle liste de voitures avec ce mouvement appliqué
+                # Crée une nouvelle liste de voitures avec ce mouvement appliqué #
                 new_cars = copy.deepcopy(self.cars)
                 new_cars[i] = future_car
-                next_states.append(GameState(new_cars, self.width, self.height,
-                                             self.history + [(car.id, direction)]))
+                next_states.append(GameState(new_cars, self.width, self.height, self.history + [(car.id, direction)]))
 
         return next_states
 

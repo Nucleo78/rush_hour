@@ -19,7 +19,7 @@ class Car:
 
     def get_occupied_positions(self):
         """
-        Retourne une liste des positions (x, y) occupées par cette voiture.
+        Retourne une liste des positions (x, y) occupées par la voiture.
         """
         positions = []
         for i in range(self.length):
@@ -50,7 +50,7 @@ class Car:
         """
         Retourne les positions que la voiture occuperait si elle se déplaçait.
 
-        Utile pour tester les collisions sans bouger réellement.
+        C'est pour tester les collisions sans bouger réellement.
         """
         future = Car(self.id, self.x, self.y, self.length, self.orientation, self.color)
         future.move(direction)

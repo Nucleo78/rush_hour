@@ -62,7 +62,7 @@ class Grid:
 
         for (x, y) in future_positions:
             if not self.is_cell_empty(x, y, except_car=car):
-                return False  # collision ou hors limite
+                return False  # collision ou hors limite #
 
         car.move(direction)
         return True
